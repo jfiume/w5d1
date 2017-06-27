@@ -1,0 +1,15 @@
+Title: <%= @sub.title %> <br>
+description: <%= @sub.description %> <br>
+
+<%= @sub.moderator.username %> <br>
+
+<%= link_to "Edit Sub", edit_sub_url(@sub) %>
+<%= link_to "All Subs", subs_url %>
+<br>
+<% @sub.posts.each do |post| %>
+  post: <%= link_to post.title, post_url(post) %>
+  <%= button_to "Remove Post", post_url(post), method: :delete %> <br>
+<% end %>
+<br>
+
+<%=  link_to "New Post", new_post_url %>

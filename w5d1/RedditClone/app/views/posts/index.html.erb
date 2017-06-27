@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+  posts: <%= link_to post.title, post_url(post) %> <br>
+<% end %>
+<br>
+<%= link_to "New Post", new_post_url %>
